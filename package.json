@@ -1,6 +1,6 @@
 {
   "name": "time-spent",
-  "version": "0.0.1",
+  "version": "0.5.9",
   "description": "measure time spent on any process",
   "main": "index.js",
   "scripts": {
