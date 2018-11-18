@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const test = require('tape').test;
+
+const TimeSpent = require('../');
+
+const time = new TimeSpent();
+time.create();
+
+let count = 1, limit = Math.round(Math.random() * 5 + 5);
+function history(assert) {
+    if (count > limit) {
+        const reports = time.all();
+        if (reports instanceof Array && reports.length) {
+            let total = 0;
+            for (let history of reports[0].history)
+                total += history[1];
+            const since = reports[0].finished - reports[0].started;
+            assert.equal(total, since, `Total value (${ total } for ${ reports[0].history.length } items) should be equal to ${ since }`);
+        } else assert.fail('Reports unavailable');
+        return assert.end();
+    }
+
+    count++;
+    setTimeout(() => {
+        time.save(`Step #${ count }`);
+        history(assert);
+    }, Math.random() * (Math.random() * 1000));
+}
+
+test('Crosscheck time spent', function (assert) {
+    history(assert);
+});
