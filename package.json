@@ -1,0 +1,23 @@
+{
+  "name": "time-spent",
+  "version": "0.0.1",
+  "description": "measure time spent on any process",
+  "main": "index.js",
+  "scripts": {
+    "test": "chmod +x tests/time.test && node tests/time.test | ./node_modules/.bin/tap-spec"
+  },
+  "engines": {
+    "node": ">=v8.9.0"
+  },
+  "keywords": [
+    "time",
+    "spent",
+    "measure"
+  ],
+  "author": "Umut Aydin",
+  "license": "MIT",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}
