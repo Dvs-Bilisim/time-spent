@@ -1,6 +1,6 @@
 {
   "name": "time-spent",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "description": "measure time spent on any process",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,13 @@
   ],
   "author": "Umut Aydin",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dvs-Bilisim/time-spent/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dvs-Bilisim/time-spent.git"
+  },
   "devDependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
