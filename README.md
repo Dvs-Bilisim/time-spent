@@ -28,7 +28,7 @@ npm test
 
 ## Error Types
 
-- **INVALID_CHUNK :** If you call save method with a non-existant chunk name (2nd parameter) this error will be fired.
+- **INVALID_CHUNK :** If you call save method with a non-existent chunk name (2nd parameter) this error will be fired.
 
 ## Simple Usage Example
 
@@ -44,7 +44,7 @@ time.save('How long did #1 take?');
 // do some work #2
 time.save('How long did #2 take?');
 
-console.log(time.all(), null, 4);
+console.log(JSON.stringify(time.all(), null, 4));
 ```
 
 ## Simple Usage Example for Multiple Chunks
@@ -62,5 +62,5 @@ time.save('How long did #1 take?', 'work1');
 // do some work #2
 time.save('How long did #2 take?', 'work2');
 
-console.log(time.all(), null, 4);
+console.log(JSON.stringify(time.all(), null, 4));
 ```
