@@ -1,13 +1,13 @@
 {
   "name": "time-spent",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "measure time spent on any process",
   "main": "index.js",
   "scripts": {
     "test": "chmod +x tests/time.test && node tests/time.test | ./node_modules/.bin/tap-spec"
   },
   "engines": {
-    "node": ">=v8.9.0"
+    "node": ">=v6.14.4"
   },
   "keywords": [
     "time",
