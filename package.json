@@ -1,10 +1,11 @@
 {
   "name": "time-spent",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "measure time spent on any process",
   "main": "index.js",
   "scripts": {
-    "test": "chmod +x tests/time.test && node tests/time.test | ./node_modules/.bin/tap-spec"
+    "coverage": "./node_modules/.bin/jest --coverage",
+    "test": "./node_modules/.bin/jest"
   },
   "engines": {
     "node": ">=v6.14.4"
@@ -24,7 +25,9 @@
     "url": "git://github.com/Dvs-Bilisim/time-spent.git"
   },
   "devDependencies": {
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.8.0"
   }
 }
