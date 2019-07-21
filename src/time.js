@@ -8,14 +8,14 @@ class TimeSpent {
     create(name = '_', overwrite = false) {
         if (!this._names.includes(name)) this._names.push(name);
 
-        if (!this._chunks.hasOwnProperty(name) || overwrite) {
+        if (this._chunks[name] === undefined || overwrite) {
             const now = Date.now();
             this._chunks[name] = { started: now, history: [] };
         }
     }
 
     save(label = '', name = '_') {
-        if (!this._names.includes(name) || !this._chunks.hasOwnProperty(name))
+        if (!this._names.includes(name) || this._chunks[name] === undefined)
             throw new Error('INVALID_CHUNK');
 
         const from = this._chunks[name].saved || this._chunks[name].started;
@@ -25,7 +25,7 @@ class TimeSpent {
     }
 
     get(name = '_') {
-        if (!this._chunks.hasOwnProperty(name)) return undefined;
+        if (this._chunks[name] === undefined) return undefined;
 
         return {
             name,
@@ -47,7 +47,7 @@ class TimeSpent {
     destroy(name = '_') {
         if (this._names.includes(name))
             this._names.splice(this._names.indexOf(name), 1);
-        if (this._chunks.hasOwnProperty(name)) delete this._chunks[name];
+        if (this._chunks[name] !== undefined) delete this._chunks[name];
     }
 
     flush() {
